@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Images</title>
+</head>
+<body>
+    <h1>Compare Images</h1>
+    {% for image in images %}
+
+    <div class="image-comparison">
+        <div class="image-wrapper">
+            <img src="{{ image.image.url }}" alt="Image 1">
+        </div>
+    </div>
+    {% endfor %}
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="winner_id" id="winner_id">
+        <button type="submit" class="btn btn-primary">Select Winner</button>
+    </form>
+</body>
+</html>
+
