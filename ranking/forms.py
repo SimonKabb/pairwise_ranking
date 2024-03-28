@@ -1,8 +1,11 @@
 from django import forms
+from multiupload.fields import MultiFileInput
 from .models import Image
 
 
-class ImageForm(forms.ModelForm):
+class MultipleImageForm(forms.ModelForm):
     class Meta:
         model = Image
-        fields = ['image', 'points']
+        fields = ['images']
+
+    images = forms.FileField(widget=MultiFileInput(attrs={'multiple': True}))

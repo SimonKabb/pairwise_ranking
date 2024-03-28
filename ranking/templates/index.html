@@ -11,14 +11,11 @@
     <div class="container mt-5">
         <h1>Upload Image</h1>
         <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <!-- Использование Bootstrap для стилизации формы -->
-            <div class="form-group">
-                {{ form.image.label_tag }}
-                {{ form.image }}
-            </div>
-            <button type="submit" class="btn btn-primary">Upload</button>
-        </form>
+            <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload Images</button>
+</form>
     </div>
 </body>
 </html>
